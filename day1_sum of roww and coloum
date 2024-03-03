@@ -1,0 +1,37 @@
+#include <stdio.h>
+#define SIZE 100
+int main()
+{
+    int A[SIZE][SIZE],n;
+    int i,j,sum = 0;
+    printf("\nEnter size of array: ");
+    scanf("%d",&n);
+    printf("Enter elements in matrix of size %dx%d: \n",n,n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%d",&A[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        sum = 0;
+        for(j=0; j<n; j++)
+        {
+            sum+=A[i][j];
+        }
+        printf("Sum of elements of Row %d = %d\n",i+1,sum);
+    }
+    for(i=0;i<n;i++)
+    {
+        sum=0;
+        for(j=0;j<n;j++)
+        {
+            sum+=A[j][i];
+        }
+        printf("Sum of elements of Column %d = %d\n",i+1,sum);
+    }
+    printf("RgNo: 192325031");
+    return 0;
+}
