@@ -1,0 +1,31 @@
+#include<stdio.h>
+#define MAX_SIZE 100
+int main()
+{
+  int arr[MAX_SIZE],n,i,odd,even;
+  printf("\nEnter size of array: ");
+  scanf("%d",&n);
+  printf("Enter elements: \n");
+  for(i=0;i<n;i++)
+  {
+    scanf("%d",&arr[i]);
+  }
+  printf("\nEven elements of array : \n");
+  for(i=0;i<n;i++)
+  {
+    if(arr[i]%2==0)
+    {
+      printf("%d ",arr[i]);
+    }
+  }
+  printf("\nOdd elements of array : \n");
+  for(i=0;i<n;i++)
+  {
+    if(arr[i]%2!=0)
+    {
+      printf("%d ",arr[i]);
+    }
+  }
+  printf("RgNo: 192325031");
+  return 0;
+}
