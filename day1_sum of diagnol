@@ -1,0 +1,24 @@
+#include <stdio.h>
+#define size 100
+int main()
+{
+   int n,i,j,sum = 0;
+   printf("Enter the number of rows and columns of the square matrix: ");
+   scanf("%d", &n);
+   int matrix[size][size];
+   printf("Enter the elements of the matrix:\n");
+   for(i=0;i<n;i++)
+   {
+     for(j=0;j<n;j++)
+     {
+       scanf("%d", &matrix[i][j]);
+       if(i==j)
+       {
+         sum+=matrix[i][j];
+       }
+     }
+  }
+ printf("The sum of diagonal elements of the matrix is: %d\n", sum);
+ printf("RgNo: 192325031");
+ return 0;
+}
