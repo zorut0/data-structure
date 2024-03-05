@@ -1,0 +1,74 @@
+#include<stdio.h>
+struct node
+{
+  int data;
+  struct node *next;
+}*n,*head,*tail;
+void ins_beg(int num)
+{
+  n=(struct node*)malloc(sizeof(struct node));
+  n->data=num;
+  n->next=NULL;
+  if(head==NULL)
+  {
+    head=n;
+    tail=n;
+  }
+  else
+  {
+    n->next=head;
+    head=n;
+  }
+}
+void ins_end(int num)
+{
+  n=(struct node*)malloc(sizeof(struct node));
+  n->data=num;
+  n->next=NULL;
+  if(head==NULL)
+  {
+    head=n;
+    tail=n;
+  }
+  else
+  {
+    tail->next=n;
+    tail=n;
+    n->next=NULL;
+  }
+}
+void ins_mid(int num,int mid)
+{
+    struct node *t;
+    n=(struct node*)malloc(sizeof(struct node));
+    n->data=num;
+    n->next=NULL;
+    for(t=head;t!=NULL;t=t->next)
+    {
+        if(t->data==mid)
+            break;
+    }
+    n->next=t->next;
+    t->next=n;
+}
+void display()
+{
+  struct node *t;
+  t=head;
+  while(t!=NULL)
+  {
+    printf("data : %d\n",t->data);
+    printf("address : %d\n",t->next);
+    t=t->next;
+  }
+}
+int main()
+{
+  ins_beg(10);
+  ins_beg(20);
+  ins_beg(40);
+  ins_end(50);
+  ins_mid(30,40);
+  display();
+  return 0;
+}
